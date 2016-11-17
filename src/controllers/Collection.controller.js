@@ -1,4 +1,5 @@
 // import * as collectionService from '../services/Collection.service';
+const ObjectId   = require('mongodb').ObjectID;
 
 export function postCollection(req, res, next) {
   req.collection

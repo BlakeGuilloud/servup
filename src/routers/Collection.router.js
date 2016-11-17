@@ -1,7 +1,6 @@
 const express    = require('express');
 const router     = express.Router();
 const db         = require('./../db');
-const ObjectId   = require('mongodb').ObjectID;
 const controller = require('./../controllers/Collection.controller');
 
 router.param('collectionTitle', (req, res, next, collectionTitle) => {
