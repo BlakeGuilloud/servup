@@ -40,5 +40,5 @@ export function putCollection(req, res) {
 
 export function deleteCollection(req, res) {
   const result = req.collection.remove({_id: ObjectId(req.params.id)});
-  res.send(result['Error']?{'msg':'error'}:{'msg':'success'});
+  res.send(result);
 }

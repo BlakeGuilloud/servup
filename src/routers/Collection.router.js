@@ -4,15 +4,15 @@ const db         = require('./../db');
 const ObjectId   = require('mongodb').ObjectID;
 const controller = require('./../controllers/Collection.controller');
 
-router.param('collectionName', (req, res, next, collectionName) => {
-  req.collection = db.get().collection(collectionName);
+router.param('collectionTitle', (req, res, next, collectionTitle) => {
+  req.collection = db.get().collection(collectionTitle);
   next();
 });
 
-router.get('/:collectionName', controller.getCollection);
-router.post('/:collectionName', controller.postCollection);
-router.put('/:collectionName/:id', controller.putCollection);
-router.delete('/:collectionName/:id', controller.deleteCollection);
-router.get('/:collectionName/:id', controller.getCollectionById);
+router.get('/:collectionTitle', controller.getCollection);
+router.post('/:collectionTitle', controller.postCollection);
+router.put('/:collectionTitle/:id', controller.putCollection);
+router.delete('/:collectionTitle/:id', controller.deleteCollection);
+router.get('/:collectionTitle/:id', controller.getCollectionById);
 
 module.exports = router;
