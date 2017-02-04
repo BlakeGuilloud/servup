@@ -22,8 +22,10 @@ export function getCollectionById(req, res, next) {
 
 export function putCollection(req, res) {
   delete req.body._id;
+
   req.collection
     .update({'_id': ObjectId(req.params.id)}, { $set:req.body });
+
   req.collection
     .find({'_id': ObjectId(req.params.id)})
     .toArray((err, result) => {
