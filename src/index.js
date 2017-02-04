@@ -1,15 +1,16 @@
-const express          = require('express');
+const express = require('express');
 const collectionRouter = require('./routers/Collection.router');
-const http             = require('http');
-const bodyParser       = require('body-parser');
-const cors             = require('cors');
-const db               = require('./db');
-const url              = process.env.MONGODB_URI || 'mongodb://localhost/tada';
-const port             = process.env.PORT || 8100;
+const http = require('http');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const db = require('./db');
+const url = process.env.MONGODB_URI || 'mongodb://localhost/tada';
+const port = process.env.PORT || 8100;
 
 const app = express();
 
 app.use(cors());
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

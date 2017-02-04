@@ -1,10 +1,10 @@
-// import * as collectionService from '../services/Collection.service';
-const ObjectId   = require('mongodb').ObjectID;
+const ObjectId = require('mongodb').ObjectID;
 
 export function postCollection(req, res, next) {
   req.collection
     .insert(req.body, {}, (err, results) => {
       if (err) { return next(err); }
+
       res.send(results.ops[0]);
     });
 }
@@ -14,6 +14,7 @@ export function getCollection(req, res, next) {
       .find({})
       .toArray((err, results) => {
         if (err) return next(err);
+
         res.send(results);
       });
 }
@@ -23,6 +24,7 @@ export function getCollectionById(req, res, next) {
     .find({'_id': ObjectId(req.params.id)})
     .toArray((err, result) => {
       if (err) return next(err);
+
       res.send(result[0]);
     });
 }
@@ -35,11 +37,13 @@ export function putCollection(req, res) {
     .find({'_id': ObjectId(req.params.id)})
     .toArray((err, result) => {
       if (err) return next(e);
+
       res.send(result[0]);
     });
 }
 
 export function deleteCollection(req, res) {
   const result = req.collection.remove({_id: ObjectId(req.params.id)});
+
   res.send(result);
 }

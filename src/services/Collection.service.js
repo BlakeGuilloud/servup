@@ -26,6 +26,7 @@ export async function patchCollection(collectionId, collectionData) {
   let updatedCollection;
   try {
     await Collection.findByIdAndUpdate(collectionId, collectionData);
+
     updatedCollection = getCollection(collectionId);
   } catch (err) {
     console.log('err', err);
@@ -51,7 +52,6 @@ export async function getCollection(id) {
   } catch (err) {
     console.log('err', err);
   }
-  console.log('collectin', collection);
 
   return Promise.resolve(collection);
 }
