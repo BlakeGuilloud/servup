@@ -1,5 +1,16 @@
 import Collection from '../models/Collection.model';
 
+export async function postCollection(collection) {
+  let newCollection;
+  try {
+    newCollection = await Collection.create(collection);
+  } catch (err) {
+    console.log('err', err);
+  }
+
+  return Promise.resolve(newCollection);
+}
+
 export async function getCollections() {
   let collections;
   try {

@@ -9,6 +9,7 @@ router.param('collectionTitle', (req, res, next, collectionTitle) => {
 });
 
 router.get('/:collectionTitle', controller.getCollection);
+router.post('/:collectionTitle', controller.postCollection);
 router.put('/:collectionTitle/:id', controller.putCollection);
 router.delete('/:collectionTitle/:id', controller.deleteCollection);
 router.get('/:collectionTitle/:id', controller.getCollectionById);
