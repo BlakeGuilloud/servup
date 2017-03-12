@@ -11,7 +11,7 @@
 
 <h3> An easy to use, MongoDB API </h3>
 <p> Servup is a simple server with a schemaless DB </p>
-<p> Use `servup.herokuapp.com/collections/:collectionName` as your development API Url </p>
+<p> Use <b>servup.herokuapp.com/collections/:collectionName</b> as your development API Url </p>
 <p> The API accepts all basic CRUD operations </p>
 
 <i> Dashboard coming soon... </i>
